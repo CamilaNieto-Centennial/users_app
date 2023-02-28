@@ -1,5 +1,6 @@
 const express = require('express');
 const app = express();
+const PORT = process.env.PORT || 3000;
 const low = require('lowdb');
 const fs = require('lowdb/adapters/FileSync');
 const adapter = new fs('db.json');
@@ -54,6 +55,6 @@ app.post('/add', function (req, res) {
 
 // Start the server
 // -------------------------
-app.listen(3000, function () {
-    console.log('Running on port 3000!')
+app.listen(PORT, function () {
+    console.log(`Running on port ${PORT}!`)
 })
